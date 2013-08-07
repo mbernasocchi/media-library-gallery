@@ -248,13 +248,13 @@ function media_library_gallery_library($args = array())
 				&& $tag_ok
 				&& $category_ok)
 			{
-				$html_row .= "<div class='mlg-preview'>";
-					$html_row .= "<div class='mlg-title'><a class='thickbox' rel='media_library_gallery_$id' href='" . wp_get_attachment_url($post->ID) . "' title='" . get_the_title($post->ID) . "'><strong>" . get_the_title($post->ID) . "&nbsp;[+]</strong></a></div>";
-					$html_row .= "<div class='mlg-img'><a href='" . get_attachment_link($post->ID) . "' title='" . get_the_title($post->ID) . "'><img src='$src' alt='" . get_the_title($post->ID) . "' /></a></div>";
-					$html_row .= "<div class='mlg-actions'>";
-						$html_row .= "&ldquo;<a href='" . get_permalink($post->post_parent) . "'>" . get_the_title($post->post_parent) . "</a>&rdquo;<br/>";
-					$html_row .= "</div>";
-				$html_row .= "</div>";
+$html_row .= "<div class='mlg-preview'>";
+$html_row .= "<div class='mlg-img'><a class='thickbox' href='" . wp_get_attachment_url($post->ID) . "' title='" . get_the_title($post->ID) . "'><img src='$src' alt='" . get_the_title($post->ID) . "' /></a></div>";
+$html_row .= "<div class='mlg-title'>" . get_the_title($post->ID) . "&nbsp;in&nbsp;";
+$html_row .= "<a href='" . get_permalink($post->post_parent) . "'>" . get_the_title($post->post_parent) . "</a>";
+$html_row .= "</div>";
+$html_row .= "</div>";
+
 
 				$j++;
 			}
